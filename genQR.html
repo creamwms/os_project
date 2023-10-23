@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>QR Prompt</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="top-area">
+            <a class="menu-item brand" href="#">QR Prompt</a>
+    </header>
+    <body_gd>
+            <div class="main-area">
+                    <box>
+                            <div class="head">
+                                    <h2>QR Prompt</h2>
+                                    <p>Your QR code PromptPay</p>
+                            </div>
+
+                                        <img id="imgqr" src="" style="width: 250px; object-fit: contain;">
+                                          
+                                          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+                                          <script>
+                                           
+                                              function genQR() {
+                                                  $.ajax({
+                                                      method: 'post',
+                                                      url: 'http://localhost:3000/generateQR',
+                                                      data: {
+                                                          id: $("#id").val(),
+                                                          amount: parseFloat($("#amount").val())
+                                                      },
+                                                      success: function(response) {
+                                                          console.log('good', response)
+                                                          $("#imgqr").attr('src', response.Result)
+                                                          $("#download-img").attr('href', response.Result)
+                                                          $("#download-btn").attr('style', "")
+                                                      }, error: function(err) {
+                                                          console.log('bad', err)
+                                                      }
+                                                  })
+                                              }
+                                          </script>
+
+                                        <div class ="element">
+                                            <button id="download-btn">
+                                                <a id="download-img" href="" download="promptpay-qr.png">Download</a>
+                                            </button>
+
+                                            <button id = "close-btn">
+                                                <a id="button" href="home.html">CLOSE</a>
+                                            </button>
+                                        </div>
+          
+                            
+                    </box> 
+            </div>
+    </body_gd>
+
+    <footer class="bottom-area">
+            <p>OS_CSKMITL</p>
+
+    </body>
+</html>

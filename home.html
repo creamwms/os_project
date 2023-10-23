@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QR Prompt</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+        
+<body>
+        <header class="top-area">
+                <a class="menu-item brand" href="#">QR Prompt</a>
+        </header>
+        <body_gd>
+                <div class="main-area">
+                        <box>
+                                <div class="head">
+                                        <h2>QR Prompt</h2>
+                                        <p>generate QR code PromptPay</p>
+                                </div>
+                                
+                                <form action="" method="POST">
+                                        <div class ="element">
+                                                <label for="id">Promptpay ID : </label>
+                                                <input type="text" id="id" placeholder="Enter Promptpay ID">
+                                        </div>
+                
+                                        <div >
+                                                <label for="amount">Amount (Baht): </label>
+                                                <input type="number" id="amount" placeholder="Enter amount(baht)">
+                                        </div>
+                
+                                        <div class ="element">
+                                                <button onclick="genQR()">
+                                                        <a id="button" href="genQR.html">Generate</a> 
+                                                </button> 
+                                        </div>
+                                </form>
+                                     
+                        </box> 
+                </div>
+        </body_gd>
+
+        <footer class="bottom-area">
+                <f>OS_CSKMITL</f>
+
+        </footer>
+</body>
+</html>
